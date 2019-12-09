@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>InSSGtagram</title>
+    <meta charset="utf-8">
+    <meta http-equiv = "X-UA-Compatible"content = "IE = edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/style.css">
+<body>
+
+
+<div id="totalbox">
+    <!--image-->
+
+    <!--image-->
+
+    <!--main container-->
+    <div class="container" id="main_login_form">
+
+        <div class="login_section">
+            <img id="main_image" src="iphone_inssgtagram.PNG">
+            <div class="line container" id="login_form">
+
+                <form class="form-signin" name="loginForm" method="post">
+                    <h2 class="form-signin-heading">𝓘𝓷𝓢𝓢𝓖𝓽𝓪𝓰𝓻𝓪𝓶</h2>
+
+                    <label for="login_userid" class="sr-only"></label>
+                    <input type="text" id="login_userid" class="form-control" placeholder="사용자 아이디" required>
+                    <label for="login_userpw" class="sr-only">Password</label>
+                    <input type="password" id="login_userpw" class="form-control" placeholder="비밀번호" required>
+                    <div class="login_req" id="login_result">
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" id="loginbtn"type="submit"
+                            onclick="ck()">로그인
+                    </button>
+                    <footer class="footer">
+                        <p>또는</p>
+                    </footer>
+                    <a href="#" class="link_find">비밀번호를 잊으셨나요?</a> <!-- 생각해보니 아직 미구현..ㅎ -->
+                </form>
+                <div class="line register" id="login_form_2">
+
+                    <p id="register_font">계정이 없으신가요? <a href="register.html" class="link_register">가입하기</a></p>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!-- /main container -->
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script>
+    $(".form-control").onkeypress(function (e) {
+        if(e.keyCode == 13)
+            login();
+    })
+
+    function login(){
+        var userid = $("#login_userid").val();
+        var userpw = $("#login_userpw").val();
+        var data = new FormData();
+        data.appned("userid", userid);
+        data.append("userpw", userpw);
+        $.ajax({
+            type:"POST",
+            url:"login_ck.html", // 기본은 현재 이고, 서버에 해당 어떤 곳에 요청한다. (서버쪽과 통신할것)
+            data: data,
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                $("#login_result").html("");
+                if(data['status']=="success"){
+                    location.href = data['reason'];
+                }else{
+                    alert(data['reason']);
+                }
+            }
+        });
+    }
+    $("#loginbtn").on("click", function(){
+        login();
+    });
+
+</script>
+</body>
+</html>

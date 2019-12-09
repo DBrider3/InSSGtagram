@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>InSSGtagram</title>
+    <meta charset="utf-8">
+    <meta http-equiv = "X-UA-Compatible"content = "IE = edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="container" id="totalbox">
+    <div class="row">
+        <!--main container-->
+        <div class="container" id="main_register_form">
+
+            <div class="line container" id="register_form">
+                <form class="form-signin">
+                    <h2 class="form-signin-heading">𝓘𝓷𝓢𝓢𝓖𝓽𝓪𝓰𝓻𝓪𝓶</h2><br>
+                    <h4 id="main_font">친구들의 사진과 동영상을 보려면 가입하세요.</h4>
+                    <div id="input">
+                        <label for="register_id" class="sr-only">username</label>
+                        <input type="text" id="register_id" class="form-control" placeholder="사용자 아이디" required>
+
+                        <label for="register_pw" class="sr-only">Password</label>
+                        <input type="password" id="register_pw" class="form-control" placeholder="비밀번호" required>
+
+                        <label for="userpwchk" class="sr-only">Password</label>
+                        <input type="password" id="userpwchk" class="form-control" placeholder="비밀번호 확인" required>
+
+                        <label for="register_name" class="sr-only">name</label>
+                        <input type="text" id="register_name" class="form-control" placeholder="성명" required>
+
+                        <label for="register_email" class="sr-only">email</label>
+                        <input type="text" id="register_email" class="form-control" placeholder="이메일 주소" required>
+
+                        <label for="register_phone" class="sr-only">email</label>
+                        <input type="text" id="register_phone" class="form-control" placeholder="휴대폰 번호" required>
+                    </div>
+                    <div id="register_result" class="register_req"></div>
+                    <button class="btn btn-lg btn-primary btn-block" id="register_btn"type="submit">가입</button>
+                    <footer class="footer">
+                        <p>가입하면 InSSGtagram의 약관, 데이터 정책 및 쿠키 정책에 동의하게 됩니다.</p>
+                    </footer>
+
+                </form>
+            </div>
+
+            <div class="line_login register" id="register_form_2">
+
+                <p id="register_font">계정이 있으신가요? <a href="login.html" class="link_register">로그인</a></p>
+
+            </div>
+
+        </div> <!-- /main container -->
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script>
+        $(".form-control").onkeypress(function (e) {
+            if(e.keyCode == 13)
+                register();
+        })
+
+        function register(){
+            var userid = $("#register_id").val();
+            var userpw = $("#register_pw").val();
+            var username = $("#register_name").val();
+            var useremail = $("#register_email").val();
+            var userphone = $("#register_phone").val();
+            var data = new FormData();
+            data.appned("userid", userid);
+            data.append("userpw", userpw);
+            data.append("username", username);
+            data.append("useremail", useremail);
+            data.append("userphone", userphone);
+            $.ajax({
+                type:"POST",
+                url:"register_ck.html", // 기본은 현재 이고, 서버에 해당 어떤 곳에 요청한다. (서버쪽과 통신할것)
+                data: data,
+                dataType: "json",
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    $("#register_result").html("");
+                    if(data['status']=="success"){
+                        location.href = data['reason'];
+                    }else{
+                        alert(data['reason']);
+                    }
+                }
+            });
+        }
+        $("#register_btn").on("click", function(){
+            register();
+        });
+
+    </script>
+</body>
+</html>

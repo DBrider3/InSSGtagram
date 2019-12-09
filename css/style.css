@@ -1,0 +1,109 @@
+h2{
+    margin:10px;
+}
+@media (max-width: 993px) {
+    #main_image{
+        display: none;
+    }
+    .login_section{
+        left: calc(50% - 175px) !important;
+        top: calc(50% - 203px) !important;
+        position: fixed;
+        display: inline-block;
+        /*margin: auto;*/
+    }
+    #login_form {
+        margin: 30px 0 10px !important;
+    }
+}
+.line{
+    outline: 0;
+    border: gainsboro solid 1px;
+    border-radius: 3px;
+}
+
+.login_section{
+    left: calc(50% - 423px);
+    top: calc(50% - 309px);
+    position: fixed;
+    display: inline-block;
+    /*margin: auto;*/
+}
+.form-control{
+    margin-top: 5px;
+}
+
+#main_login_form{
+    text-align: center;
+    border-radius: 1px;
+    padding: 10px 0;
+    margin:auto !important;
+    justify-content: center;
+    margin: 12px 0 0;
+
+}
+
+#login_form{
+    margin: 130px 0 115px;
+    max-width: 350px;
+    font-size: 12px;
+    padding: 35px;
+    float: left;
+}
+#login_form_2{
+    margin-top: 10px;
+    max-width: 350px;
+}
+#main_image{
+    text-align: center;
+    background-position: 0 0;
+    background-size: 454px 618px;
+    flex-basis: 454px;
+    height: 618px;
+    margin-left: -35px;
+    margin-right: -15px;
+    float: left;
+}
+
+#loginbtn{
+    margin: 10px 10px 10px 0px;
+
+}
+#login_userid{
+    margin-top: 50px;
+}
+
+
+#main_register_form{
+    text-align: center;
+    border-radius: 1px;
+    padding: 10px 0;
+    justify-content: center;
+    margin-top: 100px;
+    max-width: 350px;
+    width: 100%;
+}
+
+#register_form{
+    margin-top: 10px;
+    max-width: 350px;
+    font-size: 14px;
+    padding: 35px;
+
+}
+#register_form_2{
+    margin-top: 10px;
+    max-width: 350px;
+}
+#register_btn{
+    margin: 10px 10px 10px 0px;
+}
+
+#register_id{
+    margin-top: 50px;
+}
+
+#register_font{
+    margin:15px;
+
+}

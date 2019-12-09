@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>InSSGtagram</title>
+    <meta charset="utf-8">
+    <meta http-equiv = "X-UA-Compatible"content = "IE = edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/site.css">
+    <style>
+
+        .feedicon{
+            margin-top:5px;
+            background: #f8f8f8;
+            border:none;
+        }
+        .header-nav{
+            margin: auto;
+            width: 228px;
+            line-height: 43px;
+        }
+        .header-input{
+            border: solid 1px #dbdbdb;
+            border-radius: 3px;
+            color: #262626;
+            outline: 0;
+            padding: 3px 10px 3px 26px;
+            z-index: 2;
+            float:left;
+            margin-top:9px;
+            margin-left:5px;
+            margin-right:5px;
+
+        }
+        .header-left{
+            float: left;
+        }
+        .navbar-header-main{
+            width: 54px;
+
+        }
+        .navbar-header-myprofile{
+            width: 41px;
+            float: right;
+        }
+
+        body, button, input, textarea {
+            color: #262626;
+            color: rgba(var(--i1d,38,38,38),1);
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 18px;
+        input{
+            -webkit-writing-mode: horizontal-tb !important;
+            text-rendering: auto;
+            color: initial;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            -webkit-appearance: textfield;
+            background-color: white;
+            -webkit-rtl-ordering: logical;
+            cursor: text;
+            margin: 0em;
+            font: 400 13.3333px Arial;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="header-left navbar-header-main">
+                <button type="button" onclick="location.href='login.html'" class="feedicon"><img src="feedicon.png"></button>
+            </div>
+            <div class="header-nav">
+                <span class="header-left mlrQa search-icon">
+                    <img src="search_icon.png" width="15x">
+                </span>
+                <input class="header-input" type="text" autocapitalize="none" placeholder="검색" value="">
+
+                <span class="header-left aIYm8 search-cancel-icon">
+                    <img src="cancel_icon.png" width="15px">
+                </span>
+            </div>
+            <div class="header-left navbar-header-myprofile">
+                <button type="button" onclick="location.href='login.html'" class="feedicon"><img src="myprofile.png"></button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<div class="container">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+        <p>
+            <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+        </p>
+    </div>
+
+</div> <!-- /container -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>
